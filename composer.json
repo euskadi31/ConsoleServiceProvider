@@ -1,0 +1,27 @@
+{
+    "name": "euskadi31/console-service-provider",
+    "description": "A Console Service Provider for Silex 2.0",
+    "type": "library",
+    "require": {
+        "silex/silex": "~2.0@dev",
+        "symfony/console": "~2.8|~3.0",
+        "monolog/monolog": "^1.4.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable",
+        "leaphub/phpcs-symfony2-standard": "2.0.1",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Axel Etcheverry",
+            "email": "axel@etcheverry.biz"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Euskadi31\\Silex\\": "src/"
+        }
+    }
+}
