@@ -4,8 +4,7 @@
     "type": "library",
     "require": {
         "silex/silex": "~2.0@dev",
-        "symfony/console": "~2.8|~3.0",
-        "monolog/monolog": "^1.4.1"
+        "symfony/console": "~2.8|~3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "@stable",
