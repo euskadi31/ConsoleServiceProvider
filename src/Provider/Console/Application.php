@@ -68,7 +68,10 @@ class Application extends BaseApplication
         $request = new Request();
 
         $this->setAutoExit(false);
-        $this->getContainer()->handle($request);
+        $this->getContainer()->boot();
+        $this->getContainer()->flush();
+
+        $this->getContainer()['request_stack']->push($request);
 
         $exitCode = parent::run($input, $output);
 
