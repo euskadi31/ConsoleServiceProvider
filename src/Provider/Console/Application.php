@@ -65,11 +65,14 @@ class Application extends BaseApplication
      */
     public function run(InputInterface $input = null, OutputInterface $output = null)
     {
+        $request = new Request();
+
         $this->setAutoExit(false);
-        $this->getContainer()->boot();
-        $this->getContainer()->flush();
+        $this->getContainer()->handle($request);
+
         $exitCode = parent::run($input, $output);
-        $this->getContainer()->terminate(new Request(), new Response());
+
+        $this->getContainer()->terminate($request, new Response());
 
         return $exitCode;
     }
