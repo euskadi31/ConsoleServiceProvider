@@ -22,7 +22,7 @@ Add `euskadi31/console-service-provider` to your `composer.json`:
 
 $app = new Silex\Application;
 
-$app->register(new \Euskadi31\Silex\Provider\SentryServiceProvider(), [
+$app->register(new \Euskadi31\Silex\Provider\ConsoleServiceProvider(), [
     'console.options' => [
         'name' => 'Console',
         'version' => '1.2.3'
