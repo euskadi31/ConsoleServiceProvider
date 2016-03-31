@@ -13,6 +13,7 @@ namespace Euskadi31\Silex\Provider\Console;
 use Symfony\Component\Console\Application as BaseApplication;
 use Silex\Application as SilexApplication;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,9 +45,17 @@ class Application extends BaseApplication
      */
     public function __construct(SilexApplication $container, $name = 'UNKNOWN', $version = 'UNKNOWN')
     {
+        $env = 'dev';
+
+        if (isset($container['env'])) {
+            $env = $container['env'];
+        }
+
         $this->container = $container;
 
         parent::__construct($name, $version);
+
+        $this->getDefinition()->addOption(new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', $env));
     }
 
     /**

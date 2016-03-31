@@ -24,6 +24,8 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
     {
         $app = new Silex\Application();
 
+        $app['env'] = 'prod';
+
         $console = new Console\Application($app, 'Test', '1.2.3');
 
         $this->assertEquals($app, $console->getContainer());
@@ -33,7 +35,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 
     public function testRun()
     {
-        $_SERVER['argv'] = ['cli.php', 'foo:bar1'];
+        $_SERVER['argv'] = ['cli.php', '--env=prod', 'foo:bar1'];
 
         $app = new Silex\Application();
 
