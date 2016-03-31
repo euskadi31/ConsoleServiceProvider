@@ -47,8 +47,8 @@ class Application extends BaseApplication
     {
         $env = 'dev';
 
-        if (isset($container['env'])) {
-            $env = $container['env'];
+        if (isset($container['environment'])) {
+            $env = $container['environment'];
         }
 
         $this->container = $container;

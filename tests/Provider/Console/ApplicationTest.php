@@ -24,7 +24,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
     {
         $app = new Silex\Application();
 
-        $app['env'] = 'prod';
+        $app['environment'] = 'prod';
 
         $console = new Console\Application($app, 'Test', '1.2.3');
 
